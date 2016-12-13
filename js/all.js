@@ -15,14 +15,14 @@ $(document).ready(function(){
       alert('不得為空白，請重新輸入')
     } else {
       $('.menu, .menu-ondo').append('<li>'+ inputText + '</li>');
-      $('.menu-ondo').hide();
+      $('.menu-ondo li').hide();
     }
   })
 
   /* 刪除事件並將已刪除內容於已完成顯示 */
   $(this).on('click', '.menu li', function(event) {
     $(this).hide();
-    $('.menu-ondo').show();
+    $('.menu-ondo li').show();
   });
   
    $(this).on('click','.menu-ondo li',function(){
