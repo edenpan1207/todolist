@@ -70,15 +70,15 @@ img {
   color: white;
 }
 .content {
+  padding:5px;
   overflow: auto;
-  position: relative;
   background: #EA9D76;
   text-align: center;
 }
 .content form {
   padding: 20px 0;
 }
-.content input {
+.content > form > input {
   width: 70%;
   border-radius: 5px;
   padding: 5px;
@@ -101,14 +101,12 @@ img {
   transform: translateY(2px);
   box-shadow: 1px 3px 5px gray;
 }
-.textList {
-  padding-left: 5px;
-}
-.menu, .menu-ondo {
+
+.menu {
   margin: 0 auto;
   overflow: auto;
 }
-.menu li, .menu-ondo li {
+.menu li {
   text-align: left;
   background: #DDD9D8;
   padding: 20px;
@@ -116,13 +114,8 @@ img {
   font-size: 18px;
   cursor: pointer;
 }
-.menu li:hover, .menu-ondo li:hover {
+.menu li:hover {
   background: #B3B2B2;
-  text-decoration: line-through;
-}
-.menu span {
-  font-size: 16px;
-  color: #5E3F35; 
 }
 .content h3 {
  padding: 10px 0;
@@ -131,5 +124,25 @@ img {
  margin-left: 15px;
  color: white;
  text-shadow: 1px 1px 5px gray;
+}
+
+.rmvBtn {
+  float: right;
+  box-shadow: 1px 1px 3px black;
+}
+
+.rmvBtn:hover {
+  background: gray;
+  border: 1px solid gray;
+  color: white;
+}
+
+.rmvBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px black
+}
+
+.word-ease {
+  text-decoration: line-through;
 }
 

@@ -1,31 +1,27 @@
 $(document).ready(function(){
-  /* keydown lock enter issue */
-   $(document).keypress(function(e) {
-    if(e.which === 13){
-     $('.menu-ondo').hide();
-    }
-});
 
-  /* click"確認"button 新增input內容 */
   $('#press').click(function(e){
     e.preventDefault();
-    $('.menu > span').hide();
-    var inputText = $('input[name=text-todo]').val();
-    if(inputText === ''){
-      alert('不得為空白，請重新輸入')
+     if ($('input').val() === '') {
+      alert('Add new task please..');
     } else {
-      $('.menu, .menu-ondo').append('<li>'+ inputText + '</li>');
-      $('.menu-ondo li').hide();
+      $('.menu').prepend('<li><input type="checkbox" class="check"> ' + $('input').val() + ' <button class="rmvBtn">x</button></li>');
+      $('input').val('');
     }
   })
 
-  /* 刪除事件並將已刪除內容於已完成顯示 */
-  $(this).on('click', '.menu li', function(event) {
-    $(this).hide();
-    $('.menu-ondo li').show();
-  });
-  
-   $(this).on('click','.menu-ondo li',function(){
-   $(this).hide();
- });
+  /* */
+  $(document).on('click', '.check', function() {
+    if(this.checked){
+     $(this).closest('li').addClass('word-ease'); 
+   } else {
+    $(this).closest('li').removeClass('word-ease'); 
+   }
+      });
+
+  /*  */
+  $(document).on('click','.rmvBtn',function(){
+    $(this).closest('li').remove();
+  })
+   
 })
